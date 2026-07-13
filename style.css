@@ -1,1 +1,37 @@
+body{
+    background:#0B1F3A;
+    color:white;
+    font-family:Arial,sans-serif;
+    text-align:center;
+    padding:40px;
+}
 
+h1{
+    color:#7B2CBF;
+}
+
+input{
+    width:80%;
+    padding:15px;
+    border-radius:10px;
+    border:none;
+    font-size:18px;
+}
+
+button{
+    background:#7B2CBF;
+    color:white;
+    border:none;
+    padding:15px 30px;
+    border-radius:10px;
+    font-size:18px;
+    margin-top:20px;
+}
+
+#chat{
+    margin-top:30px;
+    background:#13294B;
+    padding:20px;
+    border-radius:10px;
+    text-align:left;
+}
