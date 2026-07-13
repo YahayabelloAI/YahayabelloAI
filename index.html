@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-    
-<button onclick="startNexora()">Start NEXORA AI</button>
+    <title>NEXORA AI</title>
 
-<div id="output"></div>
     <style>
-
         body{
             background-color:#0B1F3A;
             color:white;
+            font-family:Arial, sans-serif;
             text-align:center;
-            font-family:Arial;
+            padding:40px;
         }
 
         h1{
@@ -25,10 +23,21 @@
             padding:15px 30px;
             border-radius:10px;
             font-size:18px;
+            cursor:pointer;
         }
 
-    </style>
+        button:hover{
+            background:#5A189A;
+        }
 
+        #output{
+            margin-top:30px;
+            padding:20px;
+            border:2px solid #7B2CBF;
+            border-radius:10px;
+            background:#13294B;
+        }
+    </style>
 </head>
 
 <body>
@@ -37,16 +46,21 @@
 
 <h2>Na samu mafita. Na samu malami.</h2>
 
-<p>Founder: Yahaya Bello</p>
+<p><strong>Founder:</strong> Yahaya Bello</p>
 
-<p>Country: Nigeria</p>
+<p><strong>Country:</strong> Nigeria</p>
 
-<p>Mission: To help people learn, solve problems, and build skills.</p>
+<p><strong>Mission:</strong> To help people learn, solve problems, and build skills.</p>
 
 <button onclick="startNexora()">Start NEXORA AI</button>
 
+<div id="output">
+    <p>Danna <b>Start NEXORA AI</b> domin fara tattaunawa.</p>
+</div>
+
 <script>
-function startNexora() {
+
+function startNexora(){
 
     let name = prompt("Menene sunanka?");
     let goal = prompt("Menene burinka?");
@@ -58,8 +72,11 @@ function startNexora() {
 
         <p>NEXORA AI za ta taimaka maka ka cimma burinka.</p>
 
-        <h3>Na samu mafita.<br>Na samu malami.</h3>
+        <h3>Na samu mafita.</h3>
+
+        <h3>Na samu malami.</h3>
     `;
+
 }
 
 </script>
