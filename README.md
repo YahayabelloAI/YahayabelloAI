@@ -14,3 +14,10 @@ Yahaya Bello
 
 ## Country
 Nigeria
+
+def nexora():
+    print("Assalamu Alaikum.")
+    print("Barka da zuwa NEXORA AI.")
+    print("Na samu mafita. Na samu malami.")
+
+nexora()
