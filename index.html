@@ -44,10 +44,21 @@
 <button onclick="startNexora()">Start NEXORA AI</button>
 
 <script>
-let name = prompt("Menene sunanka?");
+function startNexora() {
 
-alert("Assalamu Alaikum.\n\nBarka da zuwa " + name + ".\n\nNa samu mafita. Na samu malami.");
+    let name = prompt("Menene sunanka?");
+    let goal = prompt("Menene burinka?");
 
+    alert(
+        "Assalamu Alaikum.\n\n" +
+        "Barka da zuwa " + name + ".\n\n" +
+        "Burinka shine: " + goal + ".\n\n" +
+        "NEXORA AI za ta taimaka maka ka cimma burinka.\n\n" +
+        "Na samu mafita.\n" +
+        "Na samu malami."
+    );
+
+}
 </script>
 
 </body>
