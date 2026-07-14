@@ -43,3 +43,10 @@ function sendMessage() {
     input.value = "";
     input.focus();
 }
+document.getElementById("message").addEventListener("keydown", function(event) {
+
+    if (event.key === "Enter") {
+        sendMessage();
+    }
+
+});
