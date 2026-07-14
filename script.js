@@ -139,23 +139,38 @@ document.getElementById("chat").innerHTML = `
 
 </div>
 
-   function showHome(){
+   function showHome() {
 
-document.getElementById("content").innerHTML=`
+document.getElementById("content").innerHTML = `
 
-<h2>🏠 Home</h2>
+<div class="home">
 
-<p>Assalamu Alaikum.</p>
+<h2>🌍 Welcome to NEXORA AI</h2>
 
-<p>Barka da zuwa NEXORA AI.</p>
+<p><strong>Motto:</strong> Na samu mafita. Na samu malami.</p>
 
-<p>Na samu mafita.</p>
+<p>
+NEXORA AI an gina ta domin taimaka wa mutane su koyi ilimi,
+su warware matsaloli, kuma su gina ƙwarewa.
+</p>
 
-<p>Na samu malami.</p>
+<h3>Mission</h3>
+
+<p>
+To help people learn, solve problems, and build skills using Artificial Intelligence.
+</p>
+
+<button onclick="showChat()">
+Start Learning
+</button>
+
+</div>
 
 `;
 
 }
+
+
 
 function showChat(){
 
