@@ -63,3 +63,15 @@ nav button{
 #content{
     margin-top:20px;
 }
+.home{
+    text-align:center;
+    padding:30px;
+}
+
+.home h2{
+    color:#7B2CBF;
+}
+
+.home button{
+    margin-top:20px;
+}
