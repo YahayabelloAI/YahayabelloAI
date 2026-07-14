@@ -1,3 +1,9 @@
+const founder = {
+    name: "Yahaya Bello",
+    company: "NEXORA AI",
+    country: "Nigeria",
+    motto: "Na samu mafita. Na samu malami."
+};
 const knowledge = {
     "python": "Python yare ne mai sauƙin koya kuma yana da amfani wajen gina AI.",
     "ai": "AI yana taimakawa mutane su warware matsaloli da kuma koyon sabbin abubuwa.",
