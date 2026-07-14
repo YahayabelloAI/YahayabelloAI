@@ -95,3 +95,26 @@ function clearChat(){
     document.getElementById("chat").innerHTML = "";
 
 }
+window.onload = function () {
+
+    document.getElementById("chat").innerHTML = `
+
+    <div class="ai-message">
+
+    <strong>NEXORA AI</strong><br>
+
+    Assalamu Alaikum.
+
+    Barka da zuwa NEXORA AI.
+
+    Na samu mafita.
+
+    Na samu malami.
+
+    Rubuta saƙonka domin mu fara tattaunawa.
+
+    </div>
+
+    `;
+
+}
