@@ -8,7 +8,33 @@ const knowledge = {
 };
 "english": "Learning English will help you understand science and AI better."
 
-let chatHistory = [];
+for (let chat of chatHistory) {
+
+html += `
+
+<div class="user-message">
+
+<strong>Kai</strong><br>
+
+${chat.user}
+
+<br><small>${chat.time}</small>
+
+</div>
+
+<div class="ai-message">
+
+<strong>NEXORA AI</strong><br>
+
+${chat.ai}
+
+<br><small>${chat.time}</small>
+
+</div>
+
+`;
+
+}
 
 function sendMessage() {
 
