@@ -24,9 +24,13 @@ function sendMessage() {
         reply = "Ban san amsar wannan ba tukuna. Amma zan ci gaba da koyo.";
     }
 
-    chatHistory.push({
-        user: message,
-        ai: reply
+    let time = new Date().toLocaleTimeString();
+
+chatHistory.push({
+    user: message,
+    ai: reply,
+    time: time
+});
     });
 
     let html = "";
@@ -58,3 +62,10 @@ document.getElementById("message").addEventListener("keydown", function(event) {
     }
 
 });
+function clearChat(){
+
+    chatHistory = [];
+
+    document.getElementById("chat").innerHTML = "";
+
+}
