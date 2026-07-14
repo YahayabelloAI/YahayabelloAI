@@ -139,7 +139,62 @@ document.getElementById("chat").innerHTML = `
 
 </div>
 
+   function showHome(){
+
+document.getElementById("content").innerHTML=`
+
+<h2>🏠 Home</h2>
+
+<p>Assalamu Alaikum.</p>
+
+<p>Barka da zuwa NEXORA AI.</p>
+
+<p>Na samu mafita.</p>
+
+<p>Na samu malami.</p>
+
 `;
 
 }
-    
+
+function showChat(){
+
+document.getElementById("content").innerHTML=`
+
+<h2>💬 Chat</h2>
+
+<p>Chat system zai kasance a nan.</p>
+
+`;
+
+}
+
+function showLearn(){
+
+document.getElementById("content").innerHTML=`
+
+<h2>📚 Learn</h2>
+
+<p>Anan za mu koyi Python, AI da Programming.</p>
+
+`;
+
+}
+
+function showAbout(){
+
+document.getElementById("content").innerHTML=`
+
+<h2>ℹ️ About</h2>
+
+<p>Founder: Yahaya Bello</p>
+
+<p>Company: NEXORA AI</p>
+
+<p>Country: Nigeria</p>
+
+`;
+
+}
+
+window.onload = showHome; 
