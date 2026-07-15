@@ -3,59 +3,65 @@
 
 <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXORA AI</title>
 
-<title>NEXORA AI</title>
-
-<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
-<header>
 
-<h1>NEXORA AI</h1>
+    <header>
 
-<nav>
+        <h1>NEXORA AI</h1>
 
-<button onclick="showHome()">Home</button>
+        <nav>
+            <button onclick="showHome()">🏠 Home</button>
+            <button onclick="showChat()">💬 Chat</button>
+            <button onclick="showLearn()">📚 Learn</button>
+            <button onclick="showAbout()">ℹ️ About</button>
+        </nav>
 
-<button onclick="showChat()">Chat</button>
+    </header>
 
-<button onclick="showLearn()">Learn</button>
+    <hr>
 
-<button onclick="showAbout()">About</button>
+    <!-- Wannan yana canzawa idan an danna Home, Chat, Learn ko About -->
+    <div id="content"></div>
 
-</nav>
+    <hr>
 
-</header>
+    <!-- Chat Area -->
+    <div id="chat">
 
-<hr>
+        <div class="ai-message">
+            <strong>NEXORA AI</strong><br>
+            Assalamu Alaikum.<br>
+            Barka da zuwa Day One.
+        </div>
 
-<div id="content">
+    </div>
 
-</div>
+    <br>
 
-<script src="script.js"></script>
+    <!-- Message Input -->
+    <input
+        type="text"
+        id="message"
+        placeholder="Rubuta saƙonka...">
 
-<input
-type="text"
-id="message"
-placeholder="Rubuta saƙonka...">
+    <br><br>
 
-<br><br>
+    <!-- Buttons -->
+    <button onclick="sendMessage()">📤 Send</button>
 
-<button onclick="sendMessage()">Send</button>
-<button onclick="clearChat()">Clear Chat</button>
-<div id="chat">
+    <button onclick="clearChat()">🗑️ Clear Chat</button>
 
-<p><b>NEXORA AI:</b> Assalamu Alaikum. Barka da zuwa Day One.</p>
-
-</div>
-
-<script src="script.js"></script>
+    <!-- JavaScript -->
+    <script src="script.js"></script>
 
 </body>
 
