@@ -1,201 +1,56 @@
-// ======================================
-// NEXORA AI
-// Founder: Yahaya Bello
-// Version 3.0
-// ======================================
 
-// Founder Information
-const founder = {
-    name: "Yahaya Bello",
-    company: "NEXORA AI",
-    country: "Nigeria",
-    motto: "Na samu mafita. Na samu malami."
-};
+const messagesEl = document.getElementById('chatMessages');
+const inputEl = document.getElementById('userInput');
+const sendBtn = document.getElementById('sendBtn');
+const clearBtn = document.getElementById('clearBtn');
+const feedback = document.getElementById('clearFeedback');
 
-// Knowledge Base
-const knowledge = {
-    "python": "Python yare ne mai sauƙin koya kuma yana da amfani wajen gina AI.",
-    "ai": "Artificial Intelligence yana taimakawa wajen warware matsaloli.",
-    "html": "HTML yana gina tsarin shafin yanar gizo.",
-    "css": "CSS yana ƙawata shafin yanar gizo.",
-    "javascript": "JavaScript yana sa shafin ya zama mai motsi.",
-    "github": "GitHub yana adana project kuma yana taimakawa developers.",
-    "english": "Learning English will help you understand science and AI.",
-    "nexora": "NEXORA AI an gina ta domin taimaka wa mutane su koyi ilimi.",
-    "assalamualaikum": "Wa Alaikumus Salam wa Rahmatullahi wa Barakatuh.",
-    "assalamu alaikum": "Wa Alaikumus Salam wa Rahmatullahi wa Barakatuh.",
-    "salam": "Wa Alaikumus Salam wa Rahmatullahi wa Barakatuh.",
-    "founder": "Founder na NEXORA AI shine Yahaya Bello.",
-    "country": "NEXORA AI ta fara daga Nigeria.",
-    "mission": "Mission: To help people learn, solve problems and build skills.",
-    "motto": "Na samu mafita. Na samu malami."
-};
-
-// Chat History
-let chatHistory = [];
-
-// Send Message
-function sendMessage() {
-
-    const input = document.getElementById("message");
-    const message = input.value.trim();
-
-    if (message === "") return;
-
-    const key = message.toLowerCase();
-
-    let reply = knowledge[key];
-
-    if (!reply) {
-        reply = "Ban san amsar wannan ba tukuna. Amma zan ci gaba da koyo.";
-    }
-
-    const time = new Date().toLocaleTimeString();
-
-    chatHistory.push({
-        user: message,
-        ai: reply,
-        time: time
-    });
-
-    localStorage.setItem(
-        "chatHistory",
-        JSON.stringify(chatHistory)
-    );
-
-    renderChat();
-
-    input.value = "";
-    input.focus();
+function getResponse(text){
+  const low = text.toLowerCase();
+  if(/(sannu|lafiya|yaya|ina|barka|nagode|hausa)/.test(low)) return "Lafiya lau! Na ji Hausa sosai — harshe mai dadi. Zan iya taimaka maka rubuta labari, fassara, yin wasiku, ko bada shawara kan kasuwanci a Hausa tsantsa. Me kake son mu tattauna?";
+  if(/(code|python|javascript|api|bug|function)/.test(low)) return "Ina son coding! NEXORA V5 an horar da ita akan Python, JavaScript, Rust, da Go. Zan iya rubuta maka code mai tsabta, debug, da kuma bayani step-by-step. Aiko min snippet din ka.";
+  if(/(nigeria|najeriya|kano|lagos|africa)/.test(low)) return "Najeriya ce zuciyar NEXORA. An gina mu a Kano da Lagos, tare da hangen nesa: Africa ta jagoranci AI, ba sai ta bi baya ba.";
+  return "Madalla! Na gane sakonka. NEXORA AI V5 tana aiki da ilimin Hausa, Turanci, da harsuna 50+. A matsayin samfurin demo na gani (frontend only), wannan amsa an kirkire ta ne a cikin browser dinka — babu server. Amma a zahiri, V5 zata iya rubutu, bincike, coding, da fassara cikin sauri.";
 }
 
-// Render Chat
-function renderChat() {
-
-    let html = "";
-
-    for (const chat of chatHistory) {
-
-        html += `
-        <div class="user-message">
-            <strong>Kai:</strong><br>
-            ${chat.user}
-            <br><small>${chat.time}</small>
-        </div>
-
-        <div class="ai-message">
-            <strong>NEXORA AI:</strong><br>
-            ${chat.ai}
-            <br><small>${chat.time}</small>
-        </div>
-        `;
-    }
-
-    document.getElementById("chat").innerHTML = html;
+function addMessage(text, role){
+  const div = document.createElement('div');
+  div.className = 'msg ' + role;
+  const time = new Date().toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'});
+  div.innerHTML = `<div class="msg-role">${role==='user'?'KAI':'NEXORA AI'}</div><div class="msg-text">${text.replace(/\n/g,'<br>')}</div><div class="msg-time">${time}</div>`;
+  messagesEl.appendChild(div);
+  messagesEl.scrollTo({top: messagesEl.scrollHeight, behavior:'smooth'});
 }
-// Enter Key
-document.addEventListener("DOMContentLoaded", function () {
 
-    document.getElementById("message").addEventListener("keydown", function (event) {
+function handleSend(){
+  const txt = inputEl.value.trim();
+  if(!txt) return;
+  addMessage(txt,'user');
+  inputEl.value='';
+  setTimeout(()=>{ addMessage(getResponse(txt),'assistant'); }, 800);
+}
 
-        if (event.key === "Enter") {
-            sendMessage();
-        }
+sendBtn.addEventListener('click', handleSend);
+inputEl.addEventListener('keypress', e=>{ if(e.key==='Enter') handleSend(); });
 
-    });
-
+clearBtn.addEventListener('click', ()=>{
+  messagesEl.innerHTML='';
+  feedback.style.display='block';
+  feedback.textContent = '✓ An goge tattaunawa - ' + new Date().toLocaleTimeString();
+  setTimeout(()=>{
+    addMessage('Assalamu Alaikum. Barka da zuwa Day One.\n\nNi ce NEXORA AI V5 — fasahar AI daga Najeriya, don duniya baki daya. Yaya zan taimaka maka yau?','assistant');
+    feedback.style.display='none';
+  }, 600);
 });
 
-// Clear Chat
-function clearChat() {
-
-    chatHistory = [];
-
-    localStorage.removeItem("chatHistory");
-
-    document.getElementById("chat").innerHTML = `
-        <div class="ai-message">
-            <strong>NEXORA AI</strong><br>
-            Assalamu Alaikum.<br>
-            Barka da zuwa Day One.
-        </div>
-    `;
+function switchTab(tab){
+  document.querySelectorAll('.nav-btn').forEach(b=>{
+    b.classList.toggle('active', b.dataset.tab===tab);
+  });
+  document.querySelectorAll('.tab').forEach(t=> t.classList.remove('active'));
+  document.getElementById('tab-'+tab).classList.add('active');
 }
-
-// Home
-function showHome() {
-
-    document.getElementById("content").innerHTML = `
-        <div class="home">
-            <h2>🌍 Welcome to NEXORA AI</h2>
-
-            <p><strong>Motto:</strong> ${founder.motto}</p>
-
-            <p>
-            NEXORA AI an gina ta domin taimaka wa mutane su koyi ilimi,
-            su warware matsaloli, kuma su gina ƙwarewa.
-            </p>
-
-            <button onclick="showChat()">Start Learning</button>
-        </div>
-    `;
-}
-
-// Chat
-function showChat() {
-
-    document.getElementById("content").innerHTML = `
-        <h2>💬 Chat</h2>
-        <p>Rubuta saƙonka a akwatin da ke ƙasa.</p>
-    `;
-}
-
-// Learn
-function showLearn() {
-
-    document.getElementById("content").innerHTML = `
-        <h2>📚 Learn</h2>
-
-        <ul>
-            <li>Python</li>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JavaScript</li>
-            <li>Artificial Intelligence</li>
-        </ul>
-    `;
-}
-
-// About
-function showAbout() {
-
-    document.getElementById("content").innerHTML = `
-        <h2>ℹ️ About</h2>
-
-        <p><strong>Founder:</strong> ${founder.name}</p>
-        <p><strong>Company:</strong> ${founder.company}</p>
-        <p><strong>Country:</strong> ${founder.country}</p>
-        <p><strong>Motto:</strong> ${founder.motto}</p>
-    `;
-}
-
-// Start App
-window.onload = function () {
-
-    showHome();
-
-    const savedChat = localStorage.getItem("chatHistory");
-
-    if (savedChat) {
-
-        chatHistory = JSON.parse(savedChat);
-
-        renderChat();
-
-    } else {
-
-        clearChat();
-
-    }
-
-};
+document.querySelectorAll('.nav-btn').forEach(btn=>{
+  btn.addEventListener('click', ()=> switchTab(btn.dataset.tab));
+});
+window.switchTab = switchTab;
