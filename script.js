@@ -15,7 +15,9 @@ const knowledge = {
     "hello": "Hello! Barka da zuwa NEXORA AI.",
     "assalamu alaikum": "Wa Alaikumus Salam wa Rahmatullahi wa Barakatuh.",
     "english": "Learning English will help you understand science and AI better."
-};
+    "assalamualaikum": "Wa Alaikumus Salam wa Rahmatullahi wa Barakatuh.",
+"assalamu alaikum": "Wa Alaikumus Salam wa Rahmatullahi wa Barakatuh.",
+"salam": "Wa Alaikumus Salam wa Rahmatullahi wa Barakatuh.",
 
 // Chat History
 let chatHistory = [];
