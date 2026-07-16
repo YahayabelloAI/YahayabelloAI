@@ -1,4 +1,93 @@
-...
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NEXORA AI</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <h1>NEXORA AI</h1>
+
+    <p class="motto">
+        Na samu mafita. Na samu malami.
+    </p>
+
+    <nav>
+
+        <button onclick="showHome()">🏠 Home</button>
+
+        <button onclick="showLearn()">📚 Learn</button>
+
+        <button onclick="showChat()">💬 Chat</button>
+
+        <button onclick="showAbout()">ℹ️ About</button>
+
+    </nav>
+
+</header>
+
+<main>
+
+    <section id="content">
+
+    </section>
+
+    <section id="chat-section">
+
+        <div id="chat">
+
+            <div class="ai-message">
+
+                <strong>NEXORA AI</strong><br>
+
+                Assalamu Alaikum.<br>
+
+                Barka da zuwa Day One.
+
+            </div>
+
+        </div>
+
+        <br>
+
+        <input
+            type="text"
+            id="message"
+            placeholder="Rubuta saƙonka...">
+
+        <br><br>
+
+        <button onclick="sendMessage()">
+            📤 Send
+        </button>
+
+        <button onclick="clearChat()">
+            🗑️ Clear Chat
+        </button>
+
+    </section>
+
+</main>
+
+<script src="js/knowledge.js"></script>
+<script src="js/chat.js"></script>
+<script src="js/memory.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+
+</html>
     <button onclick="sendMessage()">
         📤 Send
     </button>
