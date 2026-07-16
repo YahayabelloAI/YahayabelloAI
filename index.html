@@ -17,45 +17,7 @@
   <input type="text" id="userInput" placeholder="Rubuta tambayarka...">
   <button onclick="aikaTambaya()">Tura</button>
 
-  <script>
-    // Database
-    const database = {
-      gaisuwa: [
-        { tambaya: "Assalamu Alaikum", amsa: "Wa Alaikumus Salam, barka da zuwa Nexora AI." },
-        { tambaya: "Ina kwana?", amsa: "Lafiya kalau, Allah ya sa haka." },
-        { tambaya: "Barka da safiya", amsa: "Barka da safiya, Allah ya albarkace ka." }
-      ],
-      adduoi: [
-        { tambaya: "Addu'ar safe", amsa: "Allahumma inni asbahtu ush-hiduka wa ush-hidu hamalata arshika..." },
-        { tambaya: "Addu'ar tafiya", amsa: "Subhanalladhi sakhkhara lana hatha wama kunna lahu muqrinin..." }
-      ],
-      karinMagana: [
-        { tambaya: "Ka bani karin magana", amsa: "Ruwa baya tsami banza." },
-        { tambaya: "Wani karin magana na Hausa", amsa: "Komai nisan jifa ƙasa zai dawo." },
-        { tambaya: "Karin magana game da aiki", amsa: "Aikin gama ya fi aikin fara." }
-      ]
-    };
-
-    // Nemo amsa
-    function nemoAmsa(tambaya) {
-      for (let category in database) {
-        for (let item of database[category]) {
-          if (item.tambaya.toLowerCase() === tambaya.toLowerCase()) {
-            return item.amsa;
-          }
-        }
-      }
-      return "Yi hakuri, ban samu amsa ba. Zaka iya tambaya wani abu daban.";
-    }
-
-    // Aika tambaya
-    function aikaTambaya() {
-      const input = document.getElementById("userInput").value;
-      const amsa = nemoAmsa(input);
-      document.getElementById("chatBox").innerHTML += "<p><b>Kai:</b> " + input + "</p>";
-      document.getElementById("chatBox").innerHTML += "<p><b>Nexora AI:</b> " + amsa + "</p>";
-      document.getElementById("userInput").value = "";
-    }
-  </script>
+  <!-- Haɗa da chatbot.js -->
+  <script src="chatbot.js"></script>
 </body>
 </html>
