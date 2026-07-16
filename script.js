@@ -80,7 +80,7 @@ main{max-width:900px;margin:0 auto;padding:10px 14px 100px}
 </main>
 
 <script>
-const API_KEY ="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";
+const API_KEY ="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"
 // ============================================================
 
 const messagesEl = document.getElementById('msgs');
