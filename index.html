@@ -1,90 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="ha">
 <head>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>NEXORA AI</title>
-
-    <link rel="stylesheet" href="style.css">
-
+  <meta charset="UTF-8">
+  <title>Nexora AI</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #0d1b2a; color: #fff; }
+    #chatBox { border: 1px solid #ccc; padding: 10px; height: 300px; overflow-y: scroll; background: #1b263b; }
+    input { width: 70%; padding: 10px; }
+    button { padding: 10px; background: #415a77; color: #fff; border: none; cursor: pointer; }
+    button:hover { background: #778da9; }
+  </style>
 </head>
-
 <body>
+  <h1>Nexora AI</h1>
+  <div id="chatBox"></div>
+  <input type="text" id="userInput" placeholder="Rubuta tambayarka...">
+  <button onclick="aikaTambaya()">Tura</button>
 
-<header>
+  <script>
+    // Database
+    const database = {
+      gaisuwa: [
+        { tambaya: "Assalamu Alaikum", amsa: "Wa Alaikumus Salam, barka da zuwa Nexora AI." },
+        { tambaya: "Ina kwana?", amsa: "Lafiya kalau, Allah ya sa haka." },
+        { tambaya: "Barka da safiya", amsa: "Barka da safiya, Allah ya albarkace ka." }
+      ],
+      adduoi: [
+        { tambaya: "Addu'ar safe", amsa: "Allahumma inni asbahtu ush-hiduka wa ush-hidu hamalata arshika..." },
+        { tambaya: "Addu'ar tafiya", amsa: "Subhanalladhi sakhkhara lana hatha wama kunna lahu muqrinin..." }
+      ],
+      karinMagana: [
+        { tambaya: "Ka bani karin magana", amsa: "Ruwa baya tsami banza." },
+        { tambaya: "Wani karin magana na Hausa", amsa: "Komai nisan jifa ƙasa zai dawo." },
+        { tambaya: "Karin magana game da aiki", amsa: "Aikin gama ya fi aikin fara." }
+      ]
+    };
 
-    <h1>NEXORA AI</h1>
+    // Nemo amsa
+    function nemoAmsa(tambaya) {
+      for (let category in database) {
+        for (let item of database[category]) {
+          if (item.tambaya.toLowerCase() === tambaya.toLowerCase()) {
+            return item.amsa;
+          }
+        }
+      }
+      return "Yi hakuri, ban samu amsa ba. Zaka iya tambaya wani abu daban.";
+    }
 
-    <p class="motto">
-        Na samu mafita. Na samu malami.
-    </p>
-
-    <nav>
-
-        <button onclick="showHome()">🏠 Home</button>
-
-        <button onclick="showLearn()">📚 Learn</button>
-
-        <button onclick="showChat()">💬 Chat</button>
-
-        <button onclick="showAbout()">ℹ️ About</button>
-
-    </nav>
-
-</header>
-
-<main>
-
-    <section id="content">
-
-    </section>
-
-    <section id="chat-section">
-
-        <div id="chat">
-
-            <div class="ai-message">
-
-                <strong>NEXORA AI</strong><br>
-
-                Assalamu Alaikum.<br>
-
-                Barka da zuwa Day One.
-
-            </div>
-
-        </div>
-
-        <br>
-
-        <input
-            type="text"
-            id="message"
-            placeholder="Rubuta saƙonka...">
-
-        <br><br>
-
-        <button onclick="sendMessage()">
-            📤 Send
-        </button>
-
-        <button onclick="clearChat()">
-            🗑️ Clear Chat
-        </button>
-
-    </section>
-
-</main>
-
-<script src="js/knowledge.js"></script>
-<script src="js/chat.js"></script>
-<script src="js/memory.js"></script>
-<script src="js/ui.js"></script>
-<script src="js/app.js"></script>
-
+    // Aika tambaya
+    function aikaTambaya() {
+      const input = document.getElementById("userInput").value;
+      const amsa = nemoAmsa(input);
+      document.getElementById("chatBox").innerHTML += "<p><b>Kai:</b> " + input + "</p>";
+      document.getElementById("chatBox").innerHTML += "<p><b>Nexora AI:</b> " + amsa + "</p>";
+      document.getElementById("userInput").value = "";
+    }
+  </script>
 </body>
-
 </html>
