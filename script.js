@@ -80,8 +80,7 @@ main{max-width:900px;margin:0 auto;padding:10px 14px 100px}
 </main>
 
 <script>
-// ===== SAKA KEY DINKA ANAN - duk yadda ya fara yana aiki =====
-const API_KEY = "SAKA_KEY_DINKA_ANAN";
+const API_KEY="AQ.Ab8RN6JeHmPgryme5B9vEBZyI50vOXQQRnw4MYUORs7LFH9REg";
 // ============================================================
 
 const messagesEl = document.getElementById('msgs');
