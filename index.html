@@ -3,114 +3,104 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NEXORA AI V7</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+<title>NEXORA AI V6</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#0E1028;--card:#151836;--purple:#8B5CF6;--light:#A78BFA}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Inter',sans-serif;background:radial-gradient(120% 120% at 10% 0%, #1a1440 0%, #0E1028 55%);color:#fff;min-height:100vh}
-.topbar{display:flex;justify-content:space-between;align-items:center;padding:16px 20px}
-.xbtn{width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,0.08);border:none;color:#fff;font-size:20px;display:grid;place-items:center}
-.top-actions{display:flex;gap:10px}
-.iconbtn{width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,0.08);border:none;color:#fff;display:grid;place-items:center}
-.header-main{padding:0 20px 12px;display:flex;gap:14px;align-items:center}
-.logo-box{width:52px;height:52px;border-radius:16px;background:linear-gradient(135deg,#8B5CF6,#6D28D9);display:grid;place-items:center;box-shadow:0 8px 24px rgba(139,92,246,0.4)}
-.logo-title{font-family:'Space Grotesk';font-weight:700;font-size:28px;color:#A78BFA;letter-spacing:1px}
-.logo-sub{font-size:13px;letter-spacing:3px;color:#7A7DA0;font-weight:600}
-.logo-sub span.live{color:#34D399}
-.tabs{display:flex;gap:8px;padding:12px 20px;overflow-x:auto}
-.tab{padding:10px 22px;border-radius:999px;border:none;background:rgba(255,255,255,0.06);color:#9AA0C3;font-weight:600;cursor:pointer;white-space:nowrap}
-.tab.active{background:#8B5CF6;color:#fff;box-shadow:0 6px 20px rgba(139,92,246,0.45)}
-main{max-width:900px;margin:0 auto;padding:0 16px 120px}
-.card{background:rgba(21,24,54,0.9);border:1px solid rgba(255,255,255,0.06);border-radius:28px;overflow:hidden}
-.chat-head{display:flex;justify-content:space-between;align-items:center;padding:18px 20px;border-bottom:1px solid rgba(255,255,255,0.06)}
-.chat-head-left{display:flex;gap:12px;align-items:center}
-.avatar{width:46px;height:46px;border-radius:50%;background:#8B5CF6;display:grid;place-items:center;font-weight:700;position:relative}
-.avatar:after{content:'';position:absolute;right:-2px;bottom:-2px;width:14px;height:14px;background:#22C55E;border:3px solid #151836;border-radius:50%}
-.chat-title{font-weight:700;font-size:16px}
-.chat-sub{font-size:12px;color:#8A8EAF}
-.clear-btn{display:flex;align-items:center;gap:8px;padding:10px 18px;border-radius:999px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);color:#A9ADC9;font-size:13px;cursor:pointer}
-#msgs{padding:20px;display:flex;flex-direction:column;gap:18px;min-height:360px;max-height:62vh;overflow-y:auto}
-.msg-row{display:flex;gap:12px;align-items:flex-start}
-.msg-avatar{width:36px;height:36px;border-radius:50%;background:#8B5CF6;display:grid;place-items:center;font-weight:700;font-size:13px;flex-shrink:0}
-.msg-bubble{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.06);padding:14px 16px;border-radius:18px;max-width:82%;line-height:1.7;font-size:14.5px;color:#E6E7F0}
-.msg-bubble.user{background:#8B5CF6;border-color:#8B5CF6}
-.msg-label{font-size:11px;letter-spacing:1.5px;color:#8B7DD6;font-weight:700;margin-bottom:6px}
-.input-wrap{padding:14px 16px;display:flex;gap:10px;align-items:center;border-top:1px solid rgba(255,255,255,0.06);background:rgba(14,16,40,0.8)}
-.input-wrap input{flex:1;padding:14px 18px;border-radius:999px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.06);color:#fff;outline:none}
-.send-btn{width:48px;height:48px;border-radius:50%;background:#6B4EFF;border:none;display:grid;place-items:center;cursor:pointer}
+body{font-family:'Inter',sans-serif;background:#0A1931;color:#fff;min-height:100vh}
+header{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;padding:16px 20px;border-bottom:1px solid rgba(255,255,255,0.06);background:rgba(10,25,49,0.9)}
+.logo{font-family:'Space Grotesk';font-weight:700;color:#A78BFA;font-size:20px}
+.nav{display:flex;gap:8px}
+.nav button{padding:8px 14px;border-radius:999px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.05);color:#ccc;cursor:pointer}
+.nav button.active{background:#8B5CF6;color:#fff}
+main{max-width:1100px;margin:0 auto;padding:20px}
+.chat-box{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:24px;overflow:hidden;display:flex;flex-direction:column;min-height:500px}
+#msgs{flex:1;padding:20px;display:flex;flex-direction:column;gap:12px;overflow-y:auto;max-height:62vh}
+.m{max-width:88%;padding:12px 14px;border-radius:18px;font-size:14px;line-height:1.6;white-space:pre-wrap}
+.m.user{align-self:flex-end;background:#8B5CF6}
+.m.bot{align-self:flex-start;background:rgba(255,255,255,0.07)}
+.input-area{display:flex;gap:8px;padding:12px;border-top:1px solid rgba(255,255,255,0.07)}
+.input-area input{flex:1;padding:12px 16px;border-radius:999px;border:1px solid rgba(255,255,255,0.12);background:rgba(255,255,255,0.06);color:#fff;outline:none}
+.input-area button{padding:11px 18px;border-radius:999px;border:none;background:#8B5CF6;color:#fff;font-weight:600;cursor:pointer}
+.btm{display:flex;justify-content:space-between;align-items:center;padding:10px 12px}
+.btm button{padding:6px 14px;border-radius:999px;border:1px solid rgba(255,255,255,0.15);background:transparent;color:#aaa;font-size:12px;cursor:pointer}
 </style>
 </head>
 <body>
-<div class="topbar">
-<button class="xbtn">✕</button>
-<div class="top-actions"><button class="iconbtn">•••</button><button class="iconbtn">&lt;/&gt;</button></div>
+<header>
+<div class="logo">NEXORA AI V6</div>
+<div class="nav">
+<button class="active" onclick="showTab('chat',this)">Chat</button>
+<button onclick="showTab('home',this)">Home</button>
+<button onclick="showTab('about',this)">About</button>
 </div>
-<div class="header-main">
-<div class="logo-box">⚡</div>
-<div><div class="logo-title">NEXORA AI</div><div class="logo-sub">V5 • NIGERIA <span class="live">• LIVE</span></div></div>
-</div>
-<div class="tabs">
-<button class="tab" onclick="showTab('home',this)">Home</button>
-<button class="tab active" onclick="showTab('chat',this)">Chat</button>
-<button class="tab" onclick="showTab('learn',this)">Learn</button>
-<button class="tab" onclick="showTab('about',this)">About</button>
-</div>
+</header>
 <main>
-<div id="tab-home" style="display:none;padding:24px;color:#9AA0C3"><h1 style="font-family:Space Grotesk;font-size:42px;color:#fff">Gina makomar<br><span style="color:#A78BFA">AI a Najeriya.</span></h1></div>
-<div id="tab-chat"><div class="card">
-<div class="chat-head"><div class="chat-head-left"><div class="avatar">N</div><div><div class="chat-title">NEXORA AI V5 <span style="background:rgba(139,92,246,0.15);border:1px solid rgba(139,92,246,0.3);padding:2px 8px;border-radius:6px;font-size:10px;margin-left:8px;color:#A78BFA">BETA</span></div><div class="chat-sub">Amsa cikin < 1s • Private • Gemini Brain</div></div></div><button class="clear-btn" id="clearBtn">🗑️ Clear Chat</button></div>
-<div id="msgs"><div class="msg-row"><div class="msg-avatar">N</div><div class="msg-bubble"><div class="msg-label">NEXORA AI</div>Assalamu Alaikum. Barka da zuwa Day One.<br><br>Ni ce NEXORA AI V7 — fasahar AI daga Najeriya, don duniya baki daya. Yaya zan taimaka maka yau?</div></div></div>
-<div class="input-wrap"><input id="inp" placeholder="Rubuta sakonka..."><button class="send-btn" id="sendBtn">➤</button></div>
-</div></div>
-<div id="tab-learn" style="display:none;padding:24px;color:#9AA0C3"><h2>Learn</h2><p>Koyi yadda ake amfani da NEXORA.</p></div>
-<div id="tab-about" style="display:none;padding:24px;color:#9AA0C3"><h2>About</h2><p>NEXORA V7 by Yahaya Bello. Made in Nigeria.</p></div>
+<div id="tab-chat">
+<div class="chat-box">
+<div id="msgs">
+<div class="m bot"><b>NEXORA AI V6:</b> Assalamu Alaikum. Barka da zuwa.
+
+Ni ce NEXORA AI V6 — yanzu ina da kwakwalwa ta gaske daga Gemini. Yaya zan taimaka maka yau?</div>
+</div>
+<div class="input-area">
+<input id="inp" placeholder="Rubuta sakonka...">
+<button id="send">Send</button>
+</div>
+<div class="btm">
+<button id="clr">🗑️ Clear Chat</button>
+<span style="font-size:10px;color:#ffffff33">NEXORA V6 • Powered by Gemini</span>
+</div>
+</div>
+</div>
+<div id="tab-home" style="display:none">
+<h1 style="font-family:Space Grotesk;font-size:40px">Gina AI<br><span style="color:#A78BFA">don mutanen mu.</span></h1>
+<p style="margin-top:12px;color:#aaa">NEXORA V6 yanzu tana amfani da Gemini 1.5 Flash</p>
+</div>
+<div id="tab-about" style="display:none"><h2>About</h2><p style="color:#aaa;margin-top:8px">NEXORA V6 by Yahaya Bello. Made in Nigeria.</p></div>
 </main>
 <script>
-AQ.Ab8RN6JYjoboGy9zzFjL2jyAS9eo7gWVffxJ8K0admTSh_EoiA
-const msgsEl = document.getElementById('msgs');
+const API_KEY = "AQ.Ab8RN6JeHmPgryme5B9vEBZyI50vOXQQRnw4MYUORs7LFH9REg";
+// ====================================================
+
+const msgs = document.getElementById('msgs');
 const inp = document.getElementById('inp');
-const sendBtn = document.getElementById('sendBtn');
-function addMsg(text, isUser=false){
-  const row = document.createElement('div'); row.className='msg-row'; row.style.justifyContent = isUser? 'flex-end' : 'flex-start';
-  row.innerHTML = isUser? `<div class="msg-bubble user">${text}</div>` : `<div class="msg-avatar">N</div><div class="msg-bubble"><div class="msg-label">NEXORA AI</div>${text.replace(/\n/g,'<br>')}</div>`;
-  msgsEl.appendChild(row); msgsEl.scrollTop = 99999; return row;
+const sendBtn = document.getElementById('send');
+
+function addMsg(txt,cls){
+  const d=document.createElement('div'); d.className='m '+cls; d.textContent=txt;
+  msgs.appendChild(d); msgs.scrollTop = 99999; return d;
 }
+
 async function askGemini(prompt){
-  const models = ["gemini-2.0-flash","gemini-1.5-flash"];
-  let lastErr="";
-  for(const model of models){
-    try{
-      const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${API_KEY}`;
-      const body = { contents: [{ parts: [{ text: `Kai ne NEXORA AI V7, AI da Yahaya Bello ya gina a Najeriya. Kana magana da Hausa da Turanci. Ka amsa da Hausa idan an yi Hausa. Kada ka ce kai Gemini ne, ka ce kai NEXORA.\n\nUser: ${prompt}` }] }] };
-      const res = await fetch(url, { method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify(body) });
-      const data = await res.json();
-      if(data.error){ lastErr = data.error.message; continue; }
-      const txt = data.candidates?.[0]?.content?.parts?.[0]?.text;
-      if(txt) return txt;
-    }catch(e){ lastErr = e.message; }
-  }
-  throw new Error(lastErr || "Ba a iya haɗawa.");
+  const systemPrompt = `Kai ne NEXORA AI V6, AI ne da Yahaya Bello ya gina a Najeriya. Kana magana da Hausa da Turanci. Idan mutum yayi Hausa ka amsa da Hausa. Kada ka ce kai Gemini ne, ka ce kai NEXORA AI V6 ne.`;
+  const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${API_KEY}`;
+  const body = { contents: [{ parts: [{ text: systemPrompt + "\n\nUser: " + prompt }] }] };
+  const res = await fetch(url, { method: "POST", headers: {"Content-Type":"application/json"}, body: JSON.stringify(body) });
+  const data = await res.json();
+  if(data.error) throw new Error(data.error.message);
+  return data.candidates?.[0]?.content?.parts?.[0]?.text || "Ban gane ba.";
 }
+
 sendBtn.onclick = async ()=>{
   const v = inp.value.trim(); if(!v) return;
-  if(API_KEY === "SAKA_KEY_DINKA_ANAN"){ alert("Saka API Key dinka!"); return; }
-  addMsg(v, true); inp.value=''; sendBtn.disabled=true;
-  const loading = addMsg("NEXORA na rubutawa...", false);
-  try{ const ans = await askGemini(v); loading.remove(); addMsg(ans, false); }
-  catch(e){ loading.remove(); addMsg("Kuskure: " + e.message, false); }
-  sendBtn.disabled=false;
+  if(API_KEY === "SAKA_KEY_DINKA_ANAN"){ alert("Saka API Key dinka a code!"); return; }
+  addMsg(v,'user'); inp.value=''; sendBtn.disabled = true;
+  const typing = addMsg("NEXORA na rubutawa...","bot");
+  try{ const ans = await askGemini(v); typing.remove(); addMsg(ans,'bot'); }
+  catch(e){ typing.remove(); addMsg("Kuskure: " + e.message,'bot'); }
+  sendBtn.disabled = false;
 };
-inp.addEventListener('keypress', e=>{ if(e.key==='Enter') sendBtn.click(); });
-document.getElementById('clearBtn').onclick=()=>{ msgsEl.innerHTML=`<div class="msg-row"><div class="msg-avatar">N</div><div class="msg-bubble"><div class="msg-label">NEXORA AI</div>Assalamu Alaikum. Barka da zuwa Day One.<br><br>Ni ce NEXORA AI V7 — fasahar AI daga Najeriya. Yaya zan taimaka maka yau?</div></div>`; };
-function showTab(name, btn){
-  document.getElementById('tab-home').style.display='none';
+inp.addEventListener('keypress',e=>{ if(e.key==='Enter') sendBtn.click(); });
+document.getElementById('clr').onclick=()=>{ msgs.innerHTML='<div class="m bot"><b>NEXORA AI V6:</b> Assalamu Alaikum. Barka da zuwa.</div>'; };
+function showTab(t,btn){
   document.getElementById('tab-chat').style.display='none';
-  document.getElementById('tab-learn').style.display='none';
+  document.getElementById('tab-home').style.display='none';
   document.getElementById('tab-about').style.display='none';
-  document.getElementById('tab-'+name).style.display='block';
-  document.querySelectorAll('.tab').forEach(b=>b.classList.remove('active')); btn.classList.add('active');
+  document.getElementById('tab-'+t).style.display='block';
+  document.querySelectorAll('.nav button').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
 }
 </script>
 </body>
-</html>
+</html> 
