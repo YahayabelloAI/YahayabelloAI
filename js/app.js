@@ -34,3 +34,5 @@ const APP = {
 };
 
 APP.start();
+
+alert("NEXORA AI Version 4.0 Loaded Successfully");
