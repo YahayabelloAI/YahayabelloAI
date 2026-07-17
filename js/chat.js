@@ -44,9 +44,8 @@ function sendMessage() {
         ai: reply,
 
         time: time
-
+       saveMemory();
     });
-
     let html = "";
 
     for (const chat of chatHistory) {
