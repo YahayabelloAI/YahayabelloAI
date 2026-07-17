@@ -100,3 +100,14 @@ Barka da zuwa NEXORA AI Brain Version 4.1.
 `;
 
 }
+window.onload = function () {
+
+    loadMemory();
+
+    if (chatHistory.length === 0) {
+
+        clearChat();
+
+    }
+
+};
