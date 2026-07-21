@@ -27,7 +27,6 @@ function getReply(text) {
 
 💬 Lesson:
 ${lesson.reply}
-`;
 }
     
 // Send Message
