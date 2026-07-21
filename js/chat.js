@@ -13,7 +13,7 @@ function getReply(text) {
     // Loop through all lessons
     for (const lesson of lessons) {
 
-        // Loop through all keywords in the lesson
+        // Loop through all keywords
         for (const word of lesson.keywords) {
 
             if (text.includes(word.toLowerCase())) {
@@ -27,6 +27,19 @@ function getReply(text) {
 
 💬 Lesson:
 ${lesson.reply}
+
+➡️ Next Lesson:
+${lesson.nextLesson}
+`;
+
+            }
+
+        }
+
+    }
+
+    return "Ban san amsar wannan ba tukuna. Amma zan ci gaba da koyo.";
+
 }
     
 // Send Message
